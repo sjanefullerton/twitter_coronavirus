@@ -62,16 +62,20 @@ with zipfile.ZipFile(args.input_path) as archive:
                 for hashtag in hashtags:
                     lang = tweet['lang']
                     if tweet['place']:
-                        country = tweet['place']['country_code']
+                        if tweet['place']['country_code']:
+                            country = tweet['place']['country_code']
+                        else:
+                            country = None
                     else:
                         country = None
+
                     if hashtag in text:
                         counter_lang[hashtag][lang] += 1
                         counter_country[hashtag][country] += 1
                     counter_lang['_all'][lang] += 1
-                    country_country['_all'][country] += 1
+                    counter_country['_all'][country] += 1
 
-# open the outputfile
+#open the outputfile
 try:
     os.makedirs(args.output_folder)
 except FileExistsError:
