@@ -6,13 +6,16 @@ This project included scanning all geotagged tweets sent in 2020 to monitor the 
 
 ### Findings:
 ![Mentions of Coronavirus by Country](coronavirus_country.png)
+*Mentions of Coronavirus by Country*
 
 ![Mentions of Coronavirus by Language](coronavirus_lang.png)
+*Mentions of Coronavirus by Language*
 
 ![Mentions of 코로나바이러스 (Coronavirus) by Country](코로나바이러스_country.png)
+*Mentions of 코로나바이러스 (Coronavirus) by Country*
 
-![Mentions of 코로나바이러스 (Coronavirus) by Language](코로나바이러스_language)
-
+![Mentions of 코로나바이러스 (Coronavirus) by Language](코로나바이러스_language.png)
+*Mentions of 코로나바이러스 by Language*
 
 
 
