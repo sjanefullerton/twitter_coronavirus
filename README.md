@@ -13,22 +13,22 @@ This project included scanning all geotagged tweets sent in 2020 to monitor the 
 
 ### Findings:
 To visualize output files of MapReduce, I set the `--input_path` of the `visualize.py` file equal to both the country and lang files created in the reduce phase, and the `--key` to `#coronavirus` and `#코로나바이러스`. Results are arranged low to high.
-| ![Mentions of Coronavirus by Country](coronavirus_country.png) | 
+| ![Mentions of Coronavirus by Country](figures/coronavirus_country.png) | 
 |:--:| 
 | *Mentions of Coronavirus by Country* |
 |In this figure we can see the number of tweets that mention coronavirus for each country. The country with the largest number of tweets is shown to be the United States and the smallest is Türkiye.|
 
-| ![Mentions of Coronavirus by Language](coronavirus_lang.png) | 
+| ![Mentions of Coronavirus by Language](figures/coronavirus_lang.png) | 
 |:--:| 
 | *Mentions of Coronavirus by Language* |
 |In this figure, we can see the top 10 languages of tweets mentioning coronavirus. English is shown to be the language with the largest number of tweets and Dutch is the smallest.|
 
-| ![Mentions of 코로나바이러스 by Country](코로나바이러스_country.png) |
+| ![Mentions of 코로나바이러스 by Country](figures/코로나바이러스_country.png) |
 |:--:|
 | *Mentions of 코로나바이러스 by Country* |
 |In this figure, we see the number of tweets that mention 코로나바이러스 by country. We can see that Korea has the largest number of tweets mentioning 코로나바이러스 and Australia has the smallest.|
 
-| ![Mentions of 코로나바이러스 by Language](코로나바이러스_lang.png) |
+| ![Mentions of 코로나바이러스 by Language](figures/코로나바이러스_lang.png) |
 |:--:|
 | *Mentions of 코로나바이러스 by Language* |
 |In this figure, we can see that the language that mentions 코로나바이러스 the most is Korean. Alternatively, the language that mentions 코로나바이러스 the least is Spanish.
@@ -36,7 +36,7 @@ To visualize output files of MapReduce, I set the `--input_path` of the `visuali
 
 
 
-| ![Line plot here](line_plot.png) |
+| ![Line plot here](figures/line_plot.png) |
 |:--:|
 | *Number of Tweets of #hashtag during year by Day of Year* |
 
