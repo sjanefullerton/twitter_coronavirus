@@ -50,7 +50,7 @@ for key in args.keys:
     day = [datetime.strptime(date, '%y-%m-%d') for date in days]
     ax.plot(day, vals, label=key)
 
-ax.set_xlabel('Date (Year-Month-Day)')
+ax.set_xlabel('Date (Year-Month)')
 ax.set_ylabel('Number of Tweets')
 ax.set_title('Number of Tweets per Day')
 ax.legend()
