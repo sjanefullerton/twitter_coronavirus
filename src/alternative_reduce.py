@@ -56,19 +56,10 @@ ax.set_title('Number of Tweets per Day')
 ax.legend()
 
 
-plt.savefig('line_plot.png', bbox_inches='tight')
+plt.savefig('figures/line_plot.png', bbox_inches='tight')
 
 
 
 
-
-
-
-plt.xlabel("Day of 2020")
-plt.ylabel("Number of Tweets")
-plt.title("Number of Tweets that use # during 2020")
-plt.legend()
-plt.xticks([0, 60, 121, 182, 244, 305], ["Jan", "Mar", "May", "Jul", "Sep", "Nov"])
-plt.savefig("line_plot.png", bbox_inches="tight")
 
 
