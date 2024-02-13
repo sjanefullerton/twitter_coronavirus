@@ -51,7 +51,7 @@ for key in args.keys:
 
 ax.set_xlabel('Date (Year-Month)')
 ax.set_ylabel('Number of Tweets')
-#ax.set_title('Number of Tweets per Day')
+ax.set_title('Number of Tweets per Day')
 ax.legend()
 
 
