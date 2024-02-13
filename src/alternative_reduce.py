@@ -28,7 +28,6 @@ from datetime import datetime
 # load each of the paths
 total = defaultdict(lambda: Counter())
 path = glob.glob('outputs/geoTwitter*.zip*')
-
 for p in path:
     with open(p) as f:
         tmp = json.load(f)
@@ -45,18 +44,18 @@ for p in path:
 fig, ax = plt.subplots()
 
 for key in args.keys:
-    days = sorted(total[key].keys())
-    vals = [sum(total[key][date]) for date in days]
-    day = [datetime.strptime(date, '%y-%m-%d') for date in days]
-    ax.plot(day, vals, label=key)
+    dates = sorted(total[key].keys())
+    values = [sum(total[key][date]) for date in dates]
+    days = [datetime.strptime(date, '%y-%m-%d') for date in dates]
+    ax.plot(days, values, label=key)
 
 ax.set_xlabel('Date (Year-Month)')
 ax.set_ylabel('Number of Tweets')
-ax.set_title('Number of Tweets per Day')
+#ax.set_title('Number of Tweets per Day')
 ax.legend()
 
 
-plt.savefig('figures/line_plot.png', bbox_inches='tight')
+plt.savefig('figures/line_plot.png')
 
 
 
