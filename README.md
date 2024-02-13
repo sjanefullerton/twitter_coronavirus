@@ -39,6 +39,6 @@ To visualize output files of MapReduce, I set the `--input_path` of the `visuali
 | ![Line plot here](figures/line_plot.png) |
 |:--:|
 | *Number of Tweets of #hashtag during year by Day of Year* |
-
+|In this figure, we can see the number of tweets a specified hashtag was mentioned per day. Noticeable highlights is during July 2020, #doctor spiked to over 3000 tweets.|
 
 
