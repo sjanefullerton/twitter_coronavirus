@@ -11,7 +11,6 @@ Output: a line plot where,
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--keys',nargs='+',required=True)
-parser.add_argument('--input_paths', required=True)
 args = parser.parse_args()
 
 # imports
@@ -20,32 +19,50 @@ import json
 import glob
 import numpy as np
 import matplotlib
-mstplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from collections import Counter,defaultdict
-
+from datetime import datetime
 
 # load each of the paths
 total = defaultdict(lambda: Counter())
-filepath = glob(args.input_dir + '/*')
-file_path = sorted(filepath)
+path = glob.glob('outputs/geoTwitter*.zip*')
+
+for p in path:
+    with open(p) as f:
+        tmp = json.load(f)
+        name = os.path.basename(p)
+        date = name[10:18]
+        for key in args.keys:
+            if key in tmp:
+                if key not in total:
+                    total[key] = {}
+                if date not in total[key]:
+                    total[key][date] = []
+                total[key][date].append(sum(tmp[key].values()))
+
+fig, ax = plt.subplots()
 
 for key in args.keys:
-    y_axis = []
-    total = defaultdict(lambda: Counter())
+    days = sorted(total[key].keys())
+    vals = [sum(total[key][date]) for date in days]
+    day = [datetime.strptime(date, '%y-%m-%d') for date in days]
+    ax.plot(day, vals, label=key)
 
-    for path in file_path:
-        with open(path) as f:
-            temp = json.load(f)
-            counts = 0
-            try:
-                for k in temp[key]:
-                    counts += temp[key][k]
-            except:
-                pass
-            y_axis.append(counts)
-    plt.plot(np.arange(len(y_axis)), y_axis, label=key)
+ax.set_xlabel('Date (Year-Month-Day)')
+ax.set_ylabel('Number of Tweets')
+ax.set_title('Number of Tweets per Day')
+ax.legend()
+
+
+plt.savefig('line_plot.png', bbox_inches='tight')
+
+
+
+
+
+
 
 plt.xlabel("Day of 2020")
 plt.ylabel("Number of Tweets")
